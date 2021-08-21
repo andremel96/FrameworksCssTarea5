@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Formulario</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <form method="GET" enctype="aplicaction/x-www-form-irlencoded" action="/noexiste.html">
+        <div>
+            <div class="grid-x- grid-padding-x">
+                <label> Nombre
+                    <input type="text" name="nombre-cliente" required>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <div class="grid-x- grid-padding-x">
+                <label> Telefono
+                    <input type="tel" name="numero-telefono" required>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <div class="grid-x- grid-padding-x">
+                <label> Email
+                    <input type="email" name="direccion-correo" required>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <fieldset class="fieldset">
+                <legend>Que taxi quiere?</legend>
+                <input type="radio" name="taxi" value="car" id="Opcion1" required>
+                <label for="Opcion1">Carrito</label>
+                <input type="radio" name="taxi" value="tuktuk" id="opcion2" required>
+                <label for="tuktuk">Tuk Tuk</label>
+                <input type="radio" name="taxi" value="van" id="opcion3" required>
+                <label for="pokemonYellow">suv</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <fieldset class="fieldset">
+                <legend>Extras</legend>
+                <input id="checkbox1" type="checkbox"  value="baby"><label for="checkbox1">Sillas para
+                    bebe</label>
+                <input id="checkbox2" type="checkbox"  value="musica"><label for="checkbox2">No
+                    Reggaeton</label>
+                <input id="checkbox3" type="checkbox"  value="sillasderuedas"><label for="checkbox3">sillas de
+                    ruedas</label>
+            </fieldset>
+        </div>
+
+
+        <div>
+            <label> Dia y hora?
+                <input type="datetime-local" name="fecha-hora" required>
+            </label>
+        </div>
+
+        <div>
+            <label>Lugar para recoger
+                <select>
+                    <option value="" selected="select">seleccione opcion</option>
+                    <option value="oficina">oficina</option>
+                    <option value="feria">la feria</option>
+                    <option value="la_u">universidad</option>
+                    <option value="no_se">le digo despues</option>
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <label> dejar en:
+                <input type="text" name="dejar_en" required list="destino">
+            </label>
+            <datalist id="destino">
+                <option value="aeropueto"></option>
+                <option value="playa"></option>
+                <option value="biblioteca"></option>
+            </datalist>
+        </div>
+
+        <div>
+            <label>
+                Instrucciones Especiales
+                <textarea placeholder="Escribe Tus Instrucciones Especiales "></textarea>
+              </label>
+        </div>
+
+        <div>
+            <label for="HacerCita" class="button">Hacer Cita</label>
+            <input type="file" id="HacerCita" class="show-for-sr">
+        </div>
+    </form>
+
+</body>
+
+</html>

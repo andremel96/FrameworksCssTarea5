@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Formulario</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-500">
+
+    <!-- divisio de 3 columnas para que quede centrado -->
+    <div class="flex mb-4 pt-10">
+        <div class="w-1/3 h-12"></div>
+        <div class="w-1/3  h-12">
+            <div>
+                <form method="GET" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                    enctype="aplicaction/x-www-form-irlencoded" action="/noexiste.html">
+                    <!-- datos personales -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre-cliente">
+                            Nombre
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="nombre-cliente" type="text" placeholder="Nombre Completo" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="numero-telefono">
+                            Telefono
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="numero-telefono" type="tel" placeholder="Numero de Telefono" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="direccion-correo">
+                            Email
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="direccion-correo" type="email" placeholder="Correo Electronico" required>
+                    </div>
+
+                    <!-- vehiculo a seleccionar -->
+                    <fieldset>
+                        <legend class="block text-gray-700 text-sm font-bold mb-2"> Que taxi quiere?</legend>
+                        <div>
+                            <label>
+                                <input type="radio" name="taxi" required value="car">
+                                Carrito
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="taxi" required value="tuktuk">
+                                tuk tuk
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="radio" name="taxi" required value="van">
+                                suv
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- extras que el usuario quiere  -->
+                    <fieldset>
+                        <legend class="block text-gray-700 text-sm font-bold mb-2"> Extras</legend>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="extras"  value="baby">
+                                sillas de bebe
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="extras"  value="musica">
+                                No Regueton
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" name="extras"  value="sillasderuedas">
+                                sillas de ruedas
+                            </label>
+                        </div>
+
+                    </fieldset>
+
+                    <div>
+                        <label> Dia y hora?
+                            <div>
+                                <input
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    type="datetime-local" name="fecha-hora" required>
+                            </div>
+
+                        </label>
+                    </div>
+
+                    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="pichup_place">
+                            lugar para recojer
+                        </label>
+                        <div class="relative">
+                            <select
+                                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                id="pichup_place">
+                                <option value="oficina">oficina</option>
+                                <option value="feria">la feria</option>
+                                <option value="la_u">universidad</option>
+                                <option value="no_se">le digo despues</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <label> dejar en:
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                type="text" name="dejar_en" required list="destino" placeholder="en donde te dejamos">
+                        </label>
+                        <datalist id="destino">
+                            <option value="aeropueto"></option>
+                            <option value="playa"></option>
+                            <option value="biblioteca"></option>
+                        </datalist>
+                    </div>
+
+                    <div>
+                        <label>Instrucciones Especiales
+                            <div>
+                                <textarea
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    name="comentarios" maxlength="500" placeholder="escribe si tienes instrucciones especiales"></textarea>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button
+                        class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                        Hacer Cita
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="w-1/3 h-12"></div>
+    </div>
+
+</body>
+
+</html>

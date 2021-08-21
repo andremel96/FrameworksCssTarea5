@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mi primer formulario</title>
+</head>
+<style>
+    .myform {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8em;
+        width: 20em;
+        padding: 1em;
+        border: 1px solid #ccc;
+    }
+
+    .myform {
+        box-sizing: border-box;
+    }
+
+    .myform fieldset {
+        border: none;
+        padding: 0;
+    }
+
+    .myform legend,
+    .myform label {
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .myform label.choice {
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+
+    .myform input[type="text"],
+    .myform input[type="tel"],
+    .myform input[type="email"],
+    .myform input[type="datetime-local"],
+    .myform select,
+    .myform textarea {
+        display: block;
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<body>
+    <form method="GET" enctype="aplicaction/x-www-form-irlencoded" action="/noexiste.html">
+        <p>
+            <label> Nombre
+                <input type="text" name="nombre-cliente" required>
+            </label>
+        </p>
+        <p>
+            <label> Telefono
+                <input type="tel" name="numero-telefono" required>
+            </label>
+        </p>
+        <p>
+            <label> Email
+                <input type="email" name="direccion-correo">
+            </label>
+        </p>
+        <fieldset>
+            <legend> Que taxi quiere?</legend>
+            <p>
+                <label>
+                    <input type="radio" name="taxi" required value="car">
+                    Carrito
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="taxi" required value="tuktuk">
+                    tuk tuk
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="radio" name="taxi" required value="van">
+                    suv
+                </label>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend> Extras</legend>
+            <p>
+                <label>
+                    <input type="checkbox" name="extras" required value="baby">
+                    sillas de bebe
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="extras" required value="musica">
+                    No Regueton
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="extras" required value="sillasderuedas">
+                    sillas de ruedas
+                </label>
+            </p>
+
+        </fieldset>
+
+        <p>
+            <label> Dia y hora?
+                <input type="datetime-local" name="fecha-hora" required>
+            </label>
+        </p>
+
+        <p>
+            <label> lugar para recojer
+                <select id="pichup_place" name="pickip_place">
+                    <option value="" selected="select">seleccione opcion</option>
+                    <option value="oficina">oficina</option>
+                    <option value="feria">la feria</option>
+                    <option value="la_u">universidad</option>
+                    <option value="no_se">le digo despues</option>
+                </select>
+            </label>
+        </p>
+
+        <p>
+            <label> dejar en:
+                <input type="text" name="dejar_en" required list="destino">
+            </label>
+        </p>
+
+        <datalist id="destino">
+            <option value="aeropueto"></option>
+            <option value="playa"></option>
+            <option value="biblioteca"></option>
+        </datalist>
+        <p>
+            <label>Instrucciones Especiales
+                <textarea name="comentarios" maxlength="500"></textarea>
+            </label>
+        </p>
+        <p>
+            <button>Hacer Cita</button>
+        </p>
+    </form>
+
+</body>
+
+</html>

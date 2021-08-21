@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <title>Mi primer Formulario</title>
+</head>
+
+<body>
+    <!-- datos del usuario -->
+    <form class="pure-form pure-form-stacked">
+        <fieldset>
+            <legend> Datos Personales</legend>
+            <div class="pure-control-group">
+                <label for="aligned-name">Nombre</label>
+                <input type="text" id="nombre-cliente" placeholder="Ingrese su Nombre Completo" required />
+            </div>
+
+            <div class="pure-control-group">
+                <label for="aligned-name">Telefono</label>
+                <input type="tel" id="numero-telefono" placeholder="Ingrese su Numero de Telefono" required />
+            </div>
+
+            <div class="pure-control-group">
+                <label for="aligned-name">Email</label>
+                <input type="email" id="direccion-correo" placeholder="Ingrese su Email" required />
+            </div>
+        </fieldset>
+
+        <!-- vehiculo que el usuario necesita -->
+        <fieldset>
+            <legend> Que taxi quiere?</legend>
+
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="radio" id="taxi" required value="car" /> Carro
+                </label>
+            </div>
+
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="radio" id="taxi" required value="tuktuk" /> Tuk Tuk
+                </label>
+            </div>
+
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="radio" id="taxi" required value="van" /> Suv
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- extras que quiere el usuario -->
+        <fieldset>
+            <legend> Extras</legend>
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="checkbox" id="extras"  value="baby" /> Sillas para bebe
+                </label>
+            </div>
+
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="checkbox" id="extras"  value="musica" /> No Regueton
+                </label>
+            </div>
+
+            <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                    <input type="checkbox" id="extras"  value="sillasderuedas" /> Silla de Ruedas
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- datos de fecha y hora -->
+        <fieldset>
+            <legend> Datos para la ubicacion y hora</legend>
+            <div>
+                <label> Dia y hora?
+                    <input type="datetime-local" name="fecha-hora" required>
+                </label>
+            </div>
+
+            <div>
+                <label for="stacked-state">Lugar para recoger</label>
+                <select id="stacked-state">
+                    <option value="" selected="select">seleccione opcion</option>
+                    <option value="oficina">oficina</option>
+                    <option value="feria">la feria</option>
+                    <option value="la_u">universidad</option>
+                    <option value="no_se">le digo despues</option>
+                </select>
+            </div>
+
+            <div class="pure-control-group">
+                <label for="destino-name">Dejar en</label>
+                <input type="tex" id="dejar_en" required list="destino" />
+                <datalist id="destino">
+                    <option value="aeropueto"></option>
+                    <option value="playa"></option>
+                    <option value="biblioteca"></option>
+                </datalist>
+            </div>
+
+            <div class="pure-group">
+                <label for="destino-name">Instrucciones Especiales</label>
+                <textarea class="pure-input-1-2" name="comentarios" maxlength="500"
+                placeholder="Ingrese las Instrucciones Especiales"></textarea>
+            </div>
+        </fieldset>
+        <button class="pure-button">Hacer Cita</button>
+
+    </form>
+</body>
+
+</html>
